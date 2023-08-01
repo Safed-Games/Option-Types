@@ -8,7 +8,17 @@ namespace SafedGames.Options
     {
         protected T Value;
 
-        public abstract void Match(Action<T> some, Action none);
+        public void Match(Action<T> some, Action none)
+        {
+            if (this is Some<T>)
+            {
+                some(Value);
+            }
+            else
+            {
+                none();
+            }
+        }
 
         [Pure]
         public T Or(T ifNone) => this is Some<T> ? Value : ifNone;
@@ -36,12 +46,7 @@ namespace SafedGames.Options
         private Some(T value) => Value = value;
 
         public static Option<T> Of(T value) => new Some<T>(value);
-
-        public override void Match(Action<T> some, Action _) => some(Value);
     }
 
-    public sealed class None<T> : Option<T>
-    {
-        public override void Match(Action<T> some, Action none) => none();
-    }
+    public sealed class None<T> : Option<T> { }
 }

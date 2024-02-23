@@ -1,6 +1,6 @@
 {
   "name": "dev.safed-games.option-type",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "displayName": "Option Type",
   "description": "This package adds generic option types for C#.",
   "unity": "2022.3",

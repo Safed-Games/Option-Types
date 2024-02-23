@@ -2,11 +2,10 @@ using System;
 
 namespace SafedGames.Options
 {
-    public class AccessingNoneException : Exception
+    public sealed class AccessingNoneException : Exception
     {
-        public AccessingNoneException(string message) : base(message)
-        {
+        public AccessingNoneException() : base("Attempting to value of a None typed Option.") { }
 
-        }
+        public AccessingNoneException(string message) : base(message) { }
     }
 }

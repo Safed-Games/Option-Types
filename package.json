@@ -3,9 +3,8 @@
   "version": "0.0.1",
   "displayName": "Option Type",
   "description": "This package adds generic option types for C#.",
-  "unity": "2021.1",
+  "unity": "2022.3",
   "author": {
     "name": "Safed Games"
   }
 }
-
